@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="This is my website description" />
+    <meta name="keywords" content="web development, web design" />
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous"
+        />
+    
+    <!-- My CSS File -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <title>Note's</title>
+  </head>
+  <body>
+
+    <audio id="addNoteAudio">
+      <source src="assets/sound/addNote.wav" type="audio/wav" />
+    </audio>
+    <audio id="addCategoryAudio">
+      <source src="assets/sound/addCategory.wav" type="audio/wav" />
+    </audio>
+    <audio id="btnAudio">
+      <source src="assets/sound/btn.wav" type="audio/wav" />
+    </audio>
+    <audio id="cancelAudio">
+      <source src="assets/sound/cancel.wav" type="audio/wav" />
+    </audio>
+    <audio id="clickAudio">
+      <source src="assets/sound/click.wav" type="audio/wav" />
+    </audio>
+    <audio id="deleteAudio">
+      <source src="assets/sound/delete.wav" type="audio/wav" />
+    </audio>
+    <audio id="tabAudio">
+      <source src="assets/sound/tab.wav" type="audio/wav" />
+    </audio>
+    <audio id="warning1Audio">
+      <source src="assets/sound/warning1.wav" type="audio/wav" />
+    </audio>
+    <audio id="warning2Audio">
+      <source src="assets/sound/warning2.wav" type="audio/wav" />
+    </audio>
+
+
+    <header>
+      <h3 id="categoryHeading">
+        Category<span id="categoryAddIcon"
+          ><i
+            data-toggle="tooltip"
+            title="Add New Category"
+            class="fas fa-folder-plus"
+          ></i
+        ></span>
+      </h3>
+
+
+      <nav>
+        <ul id="categoryList"></ul>
+      </nav>
+
+
+
+      <form id="categoryForm" autocomplete="off">
+        <div class="form-group">
+          <input
+            id="categoryTextInput"
+            type="text"
+            autofocus
+            class="form-control"
+            placeholder="Category Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            id="categoryAddBtn"
+            class="btn btn-primary form-control"
+            type="submit"
+            value="Add Category"
+          />
+        </div>
+        <div class="form-group">
+          <button
+            id="categoryCancelBtn"
+            class="btn btn-warning form-control"
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </header>
+    <!-- ******************************************** -->
+
+    <!-- ******************************************** -->
+    <section>
+      <h3 id="noteHeading">
+        Note's<span id="noteAddIcon"
+          ><i
+            data-toggle="tooltip"
+            title="Add New Note"
+            class="fas fa-plus"
+          ></i
+        ></span>
+      </h3>
+
+      <form id="noteForm" autocomplete="off">
+        <div class="form-group">
+          <input
+            id="noteTextInput"
+            type="text"
+            autofocus
+            class="form-control"
+            placeholder="Add a note here."
+          />
+        </div>
+   
+        <div class="form-group">
+          <input
+            id="noteAddBtn"
+            class="btn btn-primary form-control"
+            type="submit"
+            value="Add Note"
+          />
+        </div>
+        <div class="form-group">
+          <button
+            id="noteCancelBtn"
+            class="btn btn-warning form-control"
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+     <!-- ******************************************** -->
+
+     <nav>
+
+      <ul id="noteList"></ul>
+    </nav>
+
+          <i id="deleteMode" class="fas fa-trash-alt">
+
+    <!-- Message Modal -->
+    <div id="myMessageModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div id="modalBorder" class="modal-content">
+          <div class="modal-body black">
+            <h3 id="displayMessage"></h3>
+          </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <!-- end of modal  -->
+      <!-- ******************************************** -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS    -->
+     <script type="text/javascript" src="assets/js/lib/jquery351.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <!-- My JavaScript File -->
+    <script type="text/javascript" src="assets/js/category.js"></script>
+    <script type="text/javascript" src="assets/js/note.js"></script>
+    <script type="text/javascript" src="assets/js/display.js"></script>
+    <script type="text/javascript" src="assets/js/elements.js"></script>
+    <script type="text/javascript" src="assets/js/arrayStorageLS.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+  </body>
+</html>
