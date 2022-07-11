@@ -24,7 +24,31 @@ const warning2Audio = document.querySelector("#warning2Audio");
 //The start of program exicution.
 window.onload = function () {
   categoryListStartUp();
+  // check for grocery list category. if so shows notes for grocery list.
+  groceryList();
 };
+
+const groceryList = () => {
+  // grab all the category's
+  let tabList = document.getElementsByClassName("category");
+  // create an array from an array like object
+  let newArray = Array.from(tabList);
+  // Check for Home
+  let index = -243;
+  newArray.forEach((item) => {
+    if (item.textContent === "Grocery List") {
+      // get index form Html
+      index = parseInt(item.dataset.index);
+    }
+  });
+  //  if you found Home display it's bookmarks and and active class
+  if (index >= 0) {
+    newArray[index].classList.add("active");
+    categoryIndex = index;
+    renderNotes();
+  }
+};
+
 function categoryListStartUp() {
   arrayOfCategorys = categoryListStorage.getArrayFromLS();
   if (arrayOfCategorys.length === 0) {
